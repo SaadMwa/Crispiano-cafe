@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm café color palette */
+    --background: 35 30% 97%;
+    --foreground: 24 30% 15%;
+
+    --card: 35 25% 95%;
+    --card-foreground: 24 30% 15%;
+
+    --popover: 35 30% 97%;
+    --popover-foreground: 24 30% 15%;
+
+    /* Coffee brown primary */
+    --primary: 24 45% 25%;
+    --primary-foreground: 35 30% 97%;
+
+    /* Cream secondary */
+    --secondary: 35 40% 92%;
+    --secondary-foreground: 24 30% 20%;
+
+    /* Muted tones */
+    --muted: 35 20% 90%;
+    --muted-foreground: 24 15% 45%;
+
+    /* Sage green accent */
+    --accent: 140 25% 40%;
+    --accent-foreground: 35 30% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 24 45% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom café tokens */
+    --coffee: 24 45% 25%;
+    --coffee-light: 24 35% 35%;
+    --cream: 35 40% 92%;
+    --cream-light: 35 30% 97%;
+    --sage: 140 25% 40%;
+    --sage-light: 140 20% 85%;
+    --warm-white: 35 30% 98%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(35 30% 97% / 0.1) 0%, hsl(35 30% 97% / 0.95) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(35 25% 95%) 0%, hsl(35 40% 92%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(24 45% 25% / 0.1);
+    --shadow-card: 0 8px 30px -8px hsl(24 45% 25% / 0.12);
+    --shadow-hover: 0 12px 40px -8px hsl(24 45% 25% / 0.18);
+
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 24 20% 10%;
+    --foreground: 35 30% 95%;
+
+    --card: 24 25% 14%;
+    --card-foreground: 35 30% 95%;
+
+    --popover: 24 20% 10%;
+    --popover-foreground: 35 30% 95%;
+
+    --primary: 35 40% 80%;
+    --primary-foreground: 24 30% 12%;
+
+    --secondary: 24 25% 18%;
+    --secondary-foreground: 35 30% 90%;
+
+    --muted: 24 20% 20%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 140 20% 50%;
+    --accent-foreground: 24 20% 10%;
+
+    --border: 24 20% 20%;
+    --input: 24 20% 20%;
+    --ring: 35 40% 80%;
+
+    --coffee: 35 40% 80%;
+    --coffee-light: 35 35% 70%;
+    --cream: 24 25% 18%;
+    --cream-light: 24 20% 14%;
+    --sage: 140 20% 50%;
+    --sage-light: 140 15% 25%;
+    --warm-white: 24 20% 12%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl md:text-5xl font-heading font-semibold tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-heading font-semibold;
+  }
+
+  .text-body {
+    @apply text-base sm:text-lg font-body leading-relaxed;
+  }
+
+  .text-body-sm {
+    @apply text-sm sm:text-base font-body leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
