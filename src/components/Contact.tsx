@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 const Contact = () => {
   const openWhatsApp = () => {
-    window.open('https://wa.me/1234567890?text=Hi! I would like to place an order.', '_blank');
+    window.open('https://wa.me/+923194563985?text=Hi! I would like to place an order.', '_blank');
   };
 
   const openDirections = () => {
